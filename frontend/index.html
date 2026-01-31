@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Support</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Toggle Button -->
+<button id="chat-toggle">Help</button>
+
+<!-- Chatbot -->
+<div id="chatbot" class="light">
+  <div id="chat-header">
+    <span>Customer Support</span>
+    <div class="header-actions">
+      <button id="theme-toggle">🌙</button>
+      <button id="close-chat">✕</button>
+    </div>
+  </div>
+
+  <!-- Suggested Questions -->
+  <div id="suggestions"></div>
+
+  <!-- Messages -->
+  <div id="chat-body"></div>
+
+  <!-- Loader -->
+  <div id="loader" class="hidden"></div>
+
+  <!-- Input -->
+  <div id="chat-footer">
+    <input
+      id="user-input"
+      type="text"
+      placeholder="Ask a question…"
+      autocomplete="off"
+    />
+  </div>
+</div>
+
+<script src="chatbot.js"></script>
+</body>
+</html>
