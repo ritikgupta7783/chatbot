@@ -10,6 +10,17 @@ const suggestionsDiv = document.getElementById("suggestions");
 let isLoading = false;
 let darkMode = false;
 
+const env = "production" // production for deployed version and development for local
+let API_URL;
+
+if(env === "production"){
+  API_URL = "https://chatbot-nu1c.onrender.com" 
+}else{
+  API_URL = "http://localhost:3000"
+}
+
+
+
 const SUGGESTIONS = [
   "How long does delivery take?",
   "What is your returns policy?",
@@ -67,7 +78,7 @@ async function sendMessage(text) {
   loader.classList.remove("hidden");
 
   try {
-    const res = await fetch("http://localhost:3000/chat", {
+    const res = await fetch(`${API_URL}/chat`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: text })
